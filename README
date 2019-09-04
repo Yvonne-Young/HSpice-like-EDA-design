@@ -1,2 +1,3 @@
-This project developed an EDA tool like HSpice
+This project developed an EDA tool like HSpice.
 It has the function to simulate AC/DC curves and basic circuit elements such as resistors, capacitors etc. 
+It also provides a UI for its functions.
