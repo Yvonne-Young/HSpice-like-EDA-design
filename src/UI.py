@@ -1,7 +1,7 @@
 #This file is the UI definition of MySpice with tkinter
-from Tkinter import *
+from tkinter import *
 import os
-import tkFileDialog
+from tkinter import filedialog
 from parse_netlist import *
 from simulation import *
 from plotting import *
@@ -10,7 +10,7 @@ from plotting import *
 def open_file(text):
     default = "C:/Python27/netlist_test"
     global fname
-    fname = tkFileDialog.askopenfilename(title="Choose File to Open",initialdir=(os.path.expanduser(default)))
+    fname = filedialog.askopenfilename(title="Choose File to Open",initialdir=(os.path.expanduser(default)))
     fp = open(fname,'r')
     while True:
         line = fp.readline()

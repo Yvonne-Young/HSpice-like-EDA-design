@@ -10,5 +10,3 @@ class Device(object):
 
     def g(self, v):
         return 1./self.value
-
-    

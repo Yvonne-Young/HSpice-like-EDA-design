@@ -153,25 +153,25 @@ def dc_sim(file_name,start,end,step):
                 tran_start,tran_end,MOSFET_flag,diode_flag,option = netlist_parse(file_name)
     
     if MOSFET_flag == 0:	
-	fp = open('output_dc.txt','w')
-	results = []
-	v_dc = start
-	x = []
-	size = 0
-	while v_dc < end:
-	    mna,N,coeff = get_mna(file_name,0,0,0,0,0,0,v_dc)
-	    x.append(v_dc)
-	    v_dc = v_dc + step
-	    result = np.linalg.solve(mna,N)
-	    results.append(result)
-	    size = mna.shape[0]
-	
-	#output the results of each step to the file 'output_dc.txt'
-	fp.write('===============DC Sweep results=============\n')
-	for i in results:
-	    fp.write(str(i))
-	    fp.write('\n')
-	fp.close()
+        fp = open('output_dc.txt','w')
+        results = []
+        v_dc = start
+        x = []
+        size = 0
+        while v_dc < end:
+            mna,N,coeff = get_mna(file_name,0,0,0,0,0,0,v_dc)
+            x.append(v_dc)
+            v_dc = v_dc + step
+            result = np.linalg.solve(mna,N)
+            results.append(result)
+            size = mna.shape[0]
+
+        #output the results of each step to the file 'output_dc.txt'
+        fp.write('===============DC Sweep results=============\n')
+        for i in results:
+            fp.write(str(i))
+            fp.write('\n')
+        fp.close()
         return x,results    #for the convinience of plotting
     else:
         fp = open('output_dc.txt','w')
@@ -254,7 +254,7 @@ def tran_sim(file_name,start,end):
                 tran_start,tran_end,MOSFET_flag,diode_flag,option = netlist_parse(file_name)    
     #BE or TR
     if diode_flag == 0:
-        print diode_flag
+        print (diode_flag)
         if option == 'be':
             time = start
             while time < end + 0.5:

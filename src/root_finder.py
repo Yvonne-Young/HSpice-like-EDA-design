@@ -14,11 +14,11 @@ def root_finder(x):
 if __name__ == "__main__":
     x = root_finder(0.1)
     x_iteration_process = []
-    print x[0]
+    print (x[0])
     func_iteration_process = []
     for i in range(1,10):
         x = root_finder(x[0])
-        print x[0]
+        print (x[0])
         x_iteration_process.append(x[0])
         func_iteration_process.append(func(x[0]))
     plt.figure(1)
